@@ -1,46 +1,46 @@
-let arr = {name:"adi",total:0};
-let arr2 = arr;
-arr2.total = 10;
+// let arr = {name:"adi",total:0};
+// let arr2 = arr;
+// arr2.total = 10;
 // arr2 is a reference to arr, so changes to arr2 will affect arr
-console.log(arr.total); // 10
-console.log(arr2.total); // 10
-console.log(arr);// { name: 'adi', total: 10 }
-console.log(arr2);// { name: 'adi', total: 10 }
+// console.log(arr.total); // 10
+// console.log(arr2.total); // 10
+// console.log(arr);// { name: 'adi', total: 10 }
+// console.log(arr2);// { name: 'adi', total: 10 }
 
 /**---------- */
-let arr = {name:"adi",total:0};
-let arr2 = {...arr};
-arr2.total = 10;
+// let arr = {name:"adi",total:0};
+// let arr2 = {...arr};
+// arr2.total = 10;
 
-//  arr2 is a copy of arr, so changes to arr2 will not affect arr
-console.log(arr.total); // 0
-console.log(arr2.total); // 10
-console.log(arr); // { name: 'adi', total: 0 }
-console.log(arr2); // { name: 'adi', total: 10 }
+// //  arr2 is a copy of arr, so changes to arr2 will not affect arr
+// console.log(arr.total); // 0
+// console.log(arr2.total); // 10
+// console.log(arr); // { name: 'adi', total: 0 }
+// console.log(arr2); // { name: 'adi', total: 10 }
 
-/**----------- */
-let arr = {name:"adi",total:0,balls:{type:"leather"}};
-let arr2 = {...arr};
-arr2.balls.type = "synthetic";
+// /**----------- */
+// let arr = {name:"adi",total:0,balls:{type:"leather"}};
+// let arr2 = {...arr};
+// arr2.balls.type = "synthetic";
 
-console.log(arr.balls.type); // "synthetic"
-console.log(arr);// { name: 'adi', total: 0, balls: { type: 'synthetic' } }
-console.log(arr2);  // { name: 'adi', total: 0, balls: { type: 'synthetic' } }
-// arr2 is a shallow copy of arr, so changes to nested objects will affect both
-// arr and arr2. To create a deep copy, you would need to use a method like JSON.parse(JSON.stringify(arr)) or a library like Lodash.
-//// This is because the `balls` object is still a reference to the same object in memory.
+// console.log(arr.balls.type); // "synthetic"
+// console.log(arr);// { name: 'adi', total: 0, balls: { type: 'synthetic' } }
+// console.log(arr2);  // { name: 'adi', total: 0, balls: { type: 'synthetic' } }
+// // arr2 is a shallow copy of arr, so changes to nested objects will affect both
+// // arr and arr2. To create a deep copy, you would need to use a method like JSON.parse(JSON.stringify(arr)) or a library like Lodash.
+// //// This is because the `balls` object is still a reference to the same object in memory.
 
-/**------------ */
-let arr = {name:"adi",total:0,balls:{type:"leather"}};
-let arr2 = deepCopy(arr); // Assuming deepCopy is a function that creates a deep copy of an object
-arr2.balls.type = "synthetic";
+// /**------------ */
+// let arr = {name:"adi",total:0,balls:{type:"leather"}};
+// let arr2 = deepCopy(arr); // Assuming deepCopy is a function that creates a deep copy of an object
+// arr2.balls.type = "synthetic";
 
-console.log(arr);
-console.log(arr2);
+// console.log(arr);
+// console.log(arr2);
 
-function deepCopy(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
+// function deepCopy(obj) {
+//     return JSON.parse(JSON.stringify(obj));
+// }
 // This function creates a deep copy of the object by converting it to a JSON string and then parsing it back into an object.
 // This way, changes to nested objects in the copied object do not affect the original object.
 // Note: This method has limitations, such as not being able to copy functions or special object types like Date or RegExp.
@@ -71,16 +71,36 @@ function deepCopy(obj) {
 
 /**--------- */
 
-var myObj = {
-    foo: "bar",
-    func: function() {
-        var self = this; // Save reference to the outer this
-        console.log("outer func:", this.foo); // "bar"
-        console.log("outer func:", self.foo); // "bar"
-        (function() {
-            console.log("inner func:", this.foo); // undefined (or "bar" if using arrow function)
-            console.log("inner func:", self.foo); // "bar"
-        })();
+// var myObj = {
+//     foo: "bar",
+//     func: function() {
+//         var self = this; // Save reference to the outer this
+//         console.log("outer func:", this.foo); // "bar"
+//         console.log("outer func:", self.foo); // "bar"
+//         (function() {
+//             console.log("inner func: this.foo = ", this.foo); // undefined (or "bar" if using arrow function)
+//             console.log("inner func: self.foo = ", self.foo); // "bar"
+//         }());
         
-    }()
-}
+//     }
+// };
+// myObj.func();
+// This is a classic workaround to access the correct this inside a nested function — before arrow functions existed.
+if (true) {
+    var x = 10;
+    let y = 20;
+  }
+  console.log(x); // ?
+  console.log(y); // ?
+
+"Adi".toUpperCase();    // ✅ Method of String object
+[1, 2, 3].push(4);      // ✅ Method of Array object
+Math.random();          // ✅ Method of Math object
+
+(function () {
+    var secret = "hidden";
+    console.log(secret); // ✅
+  })();
+  console.log(secret); // ❌ ReferenceError
+  
+  
