@@ -86,21 +86,41 @@
 // };
 // myObj.func();
 // This is a classic workaround to access the correct this inside a nested function — before arrow functions existed.
-if (true) {
-    var x = 10;
-    let y = 20;
-  }
-  console.log(x); // ?
-  console.log(y); // ?
+// if (true) {
+//     var x = 10;
+//     let y = 20;
+//   }
+//   console.log(x); // ?
+//   console.log(y); // ?
 
-"Adi".toUpperCase();    // ✅ Method of String object
-[1, 2, 3].push(4);      // ✅ Method of Array object
-Math.random();          // ✅ Method of Math object
+// "Adi".toUpperCase();    // ✅ Method of String object
+// [1, 2, 3].push(4);      // ✅ Method of Array object
+// Math.random();          // ✅ Method of Math object
 
-(function () {
-    var secret = "hidden";
-    console.log(secret); // ✅
-  })();
-  console.log(secret); // ❌ ReferenceError
-  
+// (function () {
+//     var secret = "hidden";
+//     console.log(secret); // ✅
+//   })();
+//   console.log(secret); // ❌ ReferenceError
+//  let obj = {
+//     name: "adi",
+//     total: 0,
+//     balls: {
+//         type: "leather"
+//     }
+//  }
+/**----------------- */
+//   if ([]==true) {
+//     console.log("adi present");
+// } else {
+//     console.log("adi absent");
+// }
+/**------------------- */
+let obj ={
+    a: {
+        b: undefined
+    }
+}
+
+console.log(obj.a?.b?.c?.d??"adi");
   
