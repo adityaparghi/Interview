@@ -124,3 +124,39 @@ let obj ={
 
 console.log(obj.a?.b?.c?.d??"adi");
   
+/********************* */
+function abc(params) {
+    return function () {
+        console.log('adi');
+    }
+}
+abc()()
+5 
+const c ={
+    name : "adi"
+}
+const d;
+d=c;
+c.name ="kumar";
+console.log(d.name);
+
+var a = 12;
+console.log(a*12);
+console.log(a**12);
+
+function res(params) {
+    sal = 1200;
+    console.log(sal);
+}
+res()
+//
+function test() {
+    console.log(test.abc)
+}
+test()
+test.abc=1;
+test.abc=2;
+test()
+//
+console.log({}=={});
+console.log({}==={});
