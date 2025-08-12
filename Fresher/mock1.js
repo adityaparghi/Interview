@@ -23,3 +23,4 @@ console.log(arr2.length); // 3
 // let arr4 = [1,18,9,81,98,124,78];
 // arr4.sort((a,b) => a-b); // ascending order
 // arr4.sort((a,b) => b-a); // descending order
+

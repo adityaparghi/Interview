@@ -81,7 +81,7 @@
 //             console.log("inner func: this.foo = ", this.foo); // undefined (or "bar" if using arrow function)
 //             console.log("inner func: self.foo = ", self.foo); // "bar"
 //         }());
-        
+
 //     }
 // };
 // myObj.func();
@@ -116,47 +116,80 @@
 //     console.log("adi absent");
 // }
 /**------------------- */
-let obj ={
-    a: {
-        b: undefined
-    }
-}
+// let obj = {
+//     a: {
+//         b: undefined
+//     }
+// }
 
-console.log(obj.a?.b?.c?.d??"adi");
-  
-/********************* */
-function abc(params) {
-    return function () {
-        console.log('adi');
-    }
-}
-abc()()
-5 
-const c ={
-    name : "adi"
-}
-const d;
-d=c;
-c.name ="kumar";
-console.log(d.name);
+// console.log(obj.a?.b?.c?.d ?? "adi");
 
-var a = 12;
-console.log(a*12);
-console.log(a**12);
+// /********************* */
+// function abc(params) {
+//     return function () {
+//         console.log('adi');
+//     }
+// }
+// abc()()
+// 5
+// const c = {
+//     name: "adi"
+// }
+// const d;
+// d = c;
+// c.name = "kumar";
+// console.log(d.name);
 
-function res(params) {
-    sal = 1200;
-    console.log(sal);
-}
-res()
-//
-function test() {
-    console.log(test.abc)
-}
-test()
-test.abc=1;
-test.abc=2;
-test()
-//
-console.log({}=={});
-console.log({}==={});
+// var a = 12;
+// console.log(a * 12);
+// console.log(a ** 12);
+
+// function res(params) {
+//     sal = 1200;
+//     console.log(sal);
+// }
+// res()
+// //
+// function test() {
+//     console.log(test.abc)
+// }
+// test()
+// test.abc = 1;
+// test.abc = 2;
+// test()
+// //
+// console.log({} == {});
+// console.log({} === {});
+
+
+/********12 snippets   */
+let a = [9, 3, 5, 1];
+a.sort((x, y) => x - y); // Ascending
+console.log(a);
+
+a.sort((x, y) => y - x); // Descending
+console.log(a);
+
+/*****Making API calls */
+fetch('https://jsonplaceholder.typicode.com/users/1')
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error('Error:', err));
+
+/********MIn MAX of array********* */
+let a = [12, 45, 7, 32];
+let max = Math.max(...a);
+let min = Math.min(...a);
+console.log(max);
+console.log(min);
+
+/************Removing Duplicates from an Array********* */
+let a = [1, 2, 2, 3, 4, 4];
+let unique = [...new Set(a)];
+console.log(unique);
+
+/************ Creating a New Array After Mapping********/
+
+let a = [2, 4, 6];
+let squared = a.map(x => x ** 2);
+console.log(squared);
