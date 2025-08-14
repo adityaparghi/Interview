@@ -235,3 +235,53 @@ const d;
 d=c;
 c.name ="kumar";
 console.log(d.name);
+
+
+var a = 12;
+console.log(a*12);
+console.log(a**12);
+
+function res(params) {
+
+    sal = 1200;
+    console.log(sal);
+}
+res()
+//
+function test() {
+    console.log(test.abc)
+}
+test()
+test.abc=1;
+test.abc=2;
+test()
+//
+console.log({}=={});
+console.log({}==={});
+//
+let a = {
+    name: "adi",
+}
+let b = {
+    ...a
+}
+b.name = "axi"
+console.log(a.name)
+//
+let  x = 1;
+let y = new Number(1);
+let z = 1;
+console.log(x===y)//false
+console.log(y===z)//false
+//
+function lambda(params) {
+    if(params == {age:28}){
+        console.log("blah blah")
+    }else if(params === {age:28}){
+        console.log("blah blah blah")
+    }else{
+        console.log("golo")
+    }
+}
+    lambda( { age : 28}) // golo 
+}
