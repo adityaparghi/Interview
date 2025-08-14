@@ -193,3 +193,45 @@ console.log(unique);
 let a = [2, 4, 6];
 let squared = a.map(x => x ** 2);
 console.log(squared);
+
+1
+const arr = [1,2,3,4];
+const res = arr.reduce((acc,curr) => (
+    acc<curr
+))
+console.log(res)
+2
+var num =500;
+function fun() {
+    console.log(num);
+    var num =100;
+}
+console.log(fun());
+3
+console.log(abc());
+function abc() {
+    console.log("pqr");
+}
+abc();
+4 // function curring
+function abc(params) {
+    return function () {
+        console.log('adi');
+    }
+}
+console.log(abc()()) // inner function return nothing thasts why undefined
+//or
+function abc(params) {
+    return function () {
+        console.log('adi');
+    }
+}
+abc()()
+5 
+const c ={
+    name : "adi"
+}
+const d;
+d=c;
+c.name ="kumar";
+console.log(d.name);
